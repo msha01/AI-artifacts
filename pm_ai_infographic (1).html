@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & Product Management Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0e12;
+    --paper: #f5f0e8;
+    --accent1: #c94a2b;
+    --accent2: #2563c4;
+    --accent3: #e8a020;
+    --accent4: #1a7a52;
+    --muted: #7a7368;
+    --rule: #c8bfaf;
+    --card-bg: #fff9f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    padding: 60px 60px 40px;
+    border-bottom: 3px solid var(--ink);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 320px; height: 100%;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 6px,
+      rgba(14,14,18,0.04) 6px,
+      rgba(14,14,18,0.04) 12px
+    );
+  }
+  .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent1);
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.08;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    color: var(--accent1);
+    font-style: italic;
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 540px;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+  .hero-badge {
+    position: absolute;
+    top: 50px; right: 60px;
+    width: 130px; height: 130px;
+    border-radius: 50%;
+    border: 2.5px solid var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: var(--accent3);
+    font-family: 'DM Mono', monospace;
+  }
+  .hero-badge .big { font-size: 32px; font-weight: 700; line-height: 1; }
+  .hero-badge .sm  { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px; }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    display: flex; align-items: center; gap: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── TIMELINE ── */
+  .timeline-section {
+    padding: 48px 60px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    border: 1.5px solid var(--ink);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  /* ── 2025+ SPOTLIGHT ── */
+  .future-section {
+    margin-top: 28px;
+    border: 2px solid var(--ink);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .future-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 28px;
+    border-bottom: 1px solid rgba(245,240,232,0.12);
+  }
+  .future-year-badge {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--accent3);
+    white-space: nowrap;
+  }
+  .future-arrow {
+    font-size: 22px;
+    color: rgba(245,240,232,0.3);
+  }
+  .future-title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+  .future-subtitle {
+    font-size: 12px;
+    color: rgba(245,240,232,0.5);
+    margin-top: 2px;
+    font-weight: 300;
+  }
+  .future-pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .future-pillar {
+    padding: 22px 24px;
+    border-right: 1px solid rgba(245,240,232,0.1);
+    position: relative;
+  }
+  .future-pillar:last-child { border-right: none; }
+  .future-pillar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+  }
+  .future-pillar.fp1::before { background: var(--accent2); }
+  .future-pillar.fp2::before { background: var(--accent1); }
+  .future-pillar.fp3::before { background: var(--accent4); }
+  .future-pillar.fp4::before { background: #888; }
+  .future-pillar-icon { font-size: 20px; margin-bottom: 10px; }
+  .future-pillar-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent3);
+    margin-bottom: 8px;
+  }
+  .future-pillar-body {
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: rgba(245,240,232,0.65);
+    font-weight: 300;
+  }
+  .tl-col {
+    border-right: 1px solid var(--rule);
+    position: relative;
+  }
+  .tl-col:last-child { border-right: none; }
+  .tl-col.highlight { background: var(--ink); color: var(--paper); }
+  .tl-col.highlight .tl-year { color: var(--accent3); }
+  .tl-col.highlight .tl-body { color: rgba(245,240,232,0.75); }
+  .tl-col.highlight .tl-tag { background: var(--accent3); color: var(--ink); }
+  .tl-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent2);
+    padding: 14px 12px 6px;
+    letter-spacing: 0.5px;
+  }
+  .tl-focus {
+    font-weight: 600;
+    font-size: 11.5px;
+    padding: 0 12px 8px;
+    line-height: 1.35;
+  }
+  .tl-body {
+    font-size: 10px;
+    color: var(--muted);
+    padding: 0 12px 10px;
+    line-height: 1.5;
+  }
+  .tl-tag {
+    margin: 0 12px 14px;
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.5px;
+    background: var(--accent2);
+    color: #fff;
+    padding: 3px 7px;
+    border-radius: 2px;
+  }
+
+  /* ── AI IMPACT GRID ── */
+  .impact-section {
+    padding: 48px 60px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .impact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .impact-card {
+    border: 1.5px solid var(--ink);
+    border-radius: 4px;
+    padding: 24px;
+    background: var(--card-bg);
+    position: relative;
+    overflow: hidden;
+  }
+  .impact-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+  }
+  .impact-card.c1::before { background: var(--accent1); }
+  .impact-card.c2::before { background: var(--accent2); }
+  .impact-card.c3::before { background: var(--accent3); }
+  .impact-card.c4::before { background: var(--accent4); }
+  .impact-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.08;
+    position: absolute;
+    top: 12px; right: 16px;
+  }
+  .impact-icon {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .impact-title {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .impact-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── RISKS ── */
+  .risks-section {
+    padding: 48px 60px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .risks-section .section-label { color: rgba(245,240,232,0.4); }
+  .risks-section .section-label::after { background: rgba(245,240,232,0.15); }
+  .risks-intro {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    color: var(--accent3);
+    max-width: 560px;
+    line-height: 1.3;
+  }
+  .risks-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .risk-card {
+    border: 1px solid rgba(245,240,232,0.15);
+    border-radius: 4px;
+    padding: 20px;
+  }
+  .risk-icon { font-size: 24px; margin-bottom: 10px; }
+  .risk-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--accent3);
+  }
+  .risk-desc {
+    font-size: 12px;
+    line-height: 1.65;
+    color: rgba(245,240,232,0.6);
+    font-weight: 300;
+  }
+
+  /* ── STAT STRIP ── */
+  .stat-strip {
+    display: flex;
+    padding: 36px 60px;
+    border-bottom: 1px solid var(--rule);
+    gap: 0;
+  }
+  .stat-item {
+    flex: 1;
+    padding: 0 24px;
+    border-right: 1px solid var(--rule);
+    text-align: center;
+  }
+  .stat-item:first-child { padding-left: 0; }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--accent1);
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 28px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .footer-brand span { color: var(--accent1); }
+  .footer-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+  .wave-divider {
+    width: 100%;
+    height: 24px;
+    overflow: hidden;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow">Product Management × Artificial Intelligence</div>
+  <h1>The <em>AI Era</em><br>of Product<br>Management</h1>
+  <p class="hero-sub">AI is reshaping product management by automating research, enhancing customer insights, and enabling predictive roadmapping — while raising urgent questions about bias, over-reliance, and ethical governance.</p>
+  <div class="hero-badge">
+    <span class="big">2025</span>
+    <span class="sm">& Beyond</span>
+  </div>
+</div>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-item">
+    <span class="stat-num">10yr</span>
+    <span class="stat-label">Evolution of PM<br>practices covered</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">40%</span>
+    <span class="stat-label">PM productivity gain<br>with AI tools (McKinsey)</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">76%</span>
+    <span class="stat-label">Executives report AI cut<br>time to market (Bain)</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">3</span>
+    <span class="stat-label">Critical ethical risks<br>demanding governance</span>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div class="timeline-section">
+  <div class="section-label">01 — Decade in Review</div>
+  <div class="timeline-grid">
+
+    <div class="tl-col">
+      <div class="tl-year">2015–17</div>
+      <div class="tl-focus">Roadmapping Basics</div>
+      <div class="tl-body">Agile adoption, cloud migration, hybrid IT models emerge.</div>
+      <div class="tl-tag">Agile Rise</div>
+    </div>
+
+    <div class="tl-col">
+      <div class="tl-year">2018–19</div>
+      <div class="tl-focus">Customer-Centricity</div>
+      <div class="tl-body">Product-led growth, microservices & DevOps adoption.</div>
+      <div class="tl-tag">PLG Era</div>
+    </div>
+
+    <div class="tl-col">
+      <div class="tl-year">2020</div>
+      <div class="tl-focus">Remote Collaboration</div>
+      <div class="tl-body">COVID drives digital-first PM & SaaS tools explosion.</div>
+      <div class="tl-tag">COVID Pivot</div>
+    </div>
+
+    <div class="tl-col">
+      <div class="tl-year">2021–22</div>
+      <div class="tl-focus">Alignment & Autonomy</div>
+      <div class="tl-body">Product Ops roles rise; DevOps becomes the norm.</div>
+      <div class="tl-tag">Product Ops</div>
+    </div>
+
+    <div class="tl-col">
+      <div class="tl-year">2023</div>
+      <div class="tl-focus">Leadership Influence</div>
+      <div class="tl-body">CPO & Head of Product gain strategic C-suite importance.</div>
+      <div class="tl-tag">CPO Surge</div>
+    </div>
+
+    <div class="tl-col">
+      <div class="tl-year">2024</div>
+      <div class="tl-focus">Efficiency Focus</div>
+      <div class="tl-body">Leaner teams, tool consolidation, predictive analytics adopted.</div>
+      <div class="tl-tag">AI-Driven</div>
+    </div>
+
+  </div>
+
+  <!-- 2025+ SPOTLIGHT SECTION -->
+  <div class="future-section">
+    <div class="future-header">
+      <div class="future-year-badge">2025 — Beyond</div>
+      <div class="future-arrow">→</div>
+      <div>
+        <div class="future-title">Strategic Leadership in the Age of Agentic AI</div>
+        <div class="future-subtitle">Delivering vision under uncertainty — the new frontier for product managers</div>
+      </div>
+    </div>
+    <div class="future-pillars">
+
+      <div class="future-pillar fp1">
+        <div class="future-pillar-icon">🤖</div>
+        <div class="future-pillar-title">Agentic AI</div>
+        <div class="future-pillar-body">Autonomous AI agents handle complex tasks end-to-end, raising new questions around hallucination, LLM drift, and ethical governance in product decisions.</div>
+      </div>
+
+      <div class="future-pillar fp2">
+        <div class="future-pillar-icon">🎨</div>
+        <div class="future-pillar-title">Vibe Coding</div>
+        <div class="future-pillar-body">AI-assisted prototyping lets PMs and designers ship working concepts at unprecedented speed — blurring the line between idea and product.</div>
+      </div>
+
+      <div class="future-pillar fp3">
+        <div class="future-pillar-icon">🤝</div>
+        <div class="future-pillar-title">Cross-Collaboration</div>
+        <div class="future-pillar-body">Enhanced collaboration bridges product, engineering, design, and data teams — breaking silos with shared AI tooling and real-time context.</div>
+      </div>
+
+      <div class="future-pillar fp4">
+        <div class="future-pillar-icon">🔭</div>
+        <div class="future-pillar-title">What More?</div>
+        <div class="future-pillar-body">The frontier is still unfolding. New paradigms — from ambient computing to human-AI teaming — promise to redefine what product management even means.</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- AI IMPACT CARDS -->
+<div class="impact-section">
+  <div class="section-label">02 — AI's Impact on Product Management</div>
+  <div class="impact-grid">
+
+    <div class="impact-card c1">
+      <div class="impact-num">01</div>
+      <div class="impact-icon">🔍</div>
+      <div class="impact-title">Automation of Research & Insights</div>
+      <div class="impact-desc">AI tools now process customer feedback, market signals, and competitor moves in hours, not weeks. A SaaS team that instrumented their onboarding funnel with AI analytics identified a critical drop-off step — a UX redesign improved <strong>activation by 25% in a single sprint</strong>.</div>
+      <div style="margin-top:12px; padding:10px 12px; background:rgba(201,74,43,0.07); border-left:3px solid var(--accent1); border-radius:2px; font-size:11px; color:var(--muted); font-style:italic;">📌 Real impact: Support ticket automation cut resolution time by 21%, handling 30%+ of incoming tickets at 75% accuracy — CIO / Metis Strategy, 2025</div>
+    </div>
+
+    <div class="impact-card c2">
+      <div class="impact-num">02</div>
+      <div class="impact-icon">🗺️</div>
+      <div class="impact-title">Predictive Roadmapping</div>
+      <div class="impact-desc">AI-driven analytics allow PMs to monitor real-time user behaviour and dynamically adjust priorities mid-cycle — no more waiting for quarterly reviews. One consumer tech firm used AI signals to detect engagement drops and <strong>improved retention without a single scheduled review cycle</strong>.</div>
+      <div style="margin-top:12px; padding:10px 12px; background:rgba(37,99,196,0.07); border-left:3px solid var(--accent2); border-radius:2px; font-size:11px; color:var(--muted); font-style:italic;">📌 Real impact: 76% of executives report AI shortened time to market for new products — Bain & Company Survey, 2024</div>
+    </div>
+
+    <div class="impact-card c3">
+      <div class="impact-num">03</div>
+      <div class="impact-icon">✨</div>
+      <div class="impact-title">Personalized Customer Experience</div>
+      <div class="impact-desc">AI enables hyper-personalization beyond basic segmentation — delivering real-time, adaptive UX based on live user behaviour. Netflix and Spotify use AI recommendation engines that directly drive retention and session depth, making personalisation a <strong>core growth lever, not a feature</strong>.</div>
+      <div style="margin-top:12px; padding:10px 12px; background:rgba(232,160,32,0.07); border-left:3px solid var(--accent3); border-radius:2px; font-size:11px; color:var(--muted); font-style:italic;">📌 Real impact: AI-driven onboarding flows and adaptive UX move users from sign-up to value faster, measurably reducing early churn</div>
+    </div>
+
+    <div class="impact-card c4">
+      <div class="impact-num">04</div>
+      <div class="impact-icon">⚡</div>
+      <div class="impact-title">Efficiency & Speed Gains</div>
+      <div class="impact-desc">GitHub Copilot cuts development time by up to 55% on core functionalities. MVP cycles have compressed from 8–10 weeks to just 2–4 weeks. McKinsey research confirms AI tools have <strong>improved PM productivity by 40%</strong> — freeing teams to focus on strategy over execution.</div>
+      <div style="margin-top:12px; padding:10px 12px; background:rgba(26,122,82,0.07); border-left:3px solid var(--accent4); border-radius:2px; font-size:11px; color:var(--muted); font-style:italic;">📌 Real impact: Prioritisation frameworks (RICE, MoSCoW) now auto-generated by AI, pushing PMs toward higher-order strategic thinking — Reforge, 2025</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- RISKS -->
+<div class="risks-section">
+  <div class="section-label">03 — Risks & Challenges</div>
+  <div class="risks-intro">Power demands responsibility. AI in PM is no exception.</div>
+  <div class="risks-row">
+
+    <div class="risk-card">
+      <div class="risk-icon">⚖️</div>
+      <div class="risk-title">Algorithmic Bias</div>
+      <div class="risk-desc">AI models trained on skewed data can distort prioritization, disadvantaging certain user segments or amplifying existing product blind spots.</div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-icon">🧠</div>
+      <div class="risk-title">Over-Reliance</div>
+      <div class="risk-desc">Excessive dependence on AI recommendations may erode human intuition, creative judgment, and the nuanced domain expertise that great PMs cultivate.</div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-icon">🔒</div>
+      <div class="risk-title">Ethical Governance</div>
+      <div class="risk-desc">Without robust governance frameworks, AI risks misusing customer data, hallucinating insights, or drifting from intended behavior as LLMs evolve.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">PM<span>×</span>AI</div>
+  <div class="footer-note">2015 — 2025 and beyond · Product Management Evolution</div>
+  <div class="footer-note" style="font-size:12px; font-family:'Playfair Display',serif; font-style:italic; color:var(--accent1);">Meenu's AI Digest</div>
+</div>
+
+</body>
+</html>
